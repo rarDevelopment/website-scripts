@@ -53,7 +53,9 @@ async function run() {
                         mastodon: [],
                         bluesky: []
                     }
-                    discussion[path].bluesky.push(b);
+                    if (!discussion[path].bluesky.find(e => e.cid === b.cid)) {
+                        discussion[path].bluesky.push(b);
+                    }
                 })
             }
         })
