@@ -1,6 +1,7 @@
 // Import necessary modules from the AWS SDK v3
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { readFile } from "fs/promises"; // Node.js built-in module for reading files
+import 'dotenv/config';
 
 // Create an S3 client with your credentials
 const s3Client = new S3Client({
