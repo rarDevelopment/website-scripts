@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/rarDevelopment/website-scripts#readme",
   "dependencies": {
+    "basic-ftp": "^5.0.4",
+    "dotenv": "^16.4.4",
     "extract-urls": "^1.4.0",
     "fs": "^0.0.1-security"
   },

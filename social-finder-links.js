@@ -1,12 +1,13 @@
 import extractUrls from 'extract-urls'
 import fs from 'fs'
+import 'dotenv/config';
 
 //modified from: https://github.com/rknightuk/api/blob/117aade2783beeb09686e9f7e7d3775facf06722/services/discussion.js
 
 const urlRegexPattern = /https:\/\/(www.)?rardk\.com\/links/g;
 const mastodonUrl = `https://mastodon.social/api/v1/accounts/425168/statuses?exclude_replies=true&limit=50&exclude_reblogs=true`;
 const blueskyUrl = `https://bsky.social/xrpc/com.atproto.repo.listRecords?collection=app.bsky.feed.post&repo=rardk64.com`;
-const fileName = './discussion-links-posts.json';
+const fileName = `${process.env.DIRECTORYPATH}discussion-links-posts.json`;
 
 async function run() {
     let discussion = JSON.parse(fs.readFileSync(fileName));
