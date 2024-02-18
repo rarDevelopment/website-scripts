@@ -28,8 +28,13 @@ async function run() {
                             bluesky: []
                         }
                     }
-                    if (!discussion[path].mastodon.find(e => e.id === t.id)) {
+                    const existingPost = discussion[path].mastodon.find(e => e.id === t.id);
+                    if (!existingPost) {
                         discussion[path].mastodon.push(t);
+                    }
+                    else {
+                        const index = discussion[path].mastodon.indexOf(existingPost);
+                        discussion[path].mastodon[index] = t;
                     }
                 })
             }
@@ -54,8 +59,13 @@ async function run() {
                         mastodon: [],
                         bluesky: []
                     }
-                    if (!discussion[path].bluesky.find(e => e.cid === b.cid)) {
+                    const existingPost = discussion[path].bluesky.find(e => e.cid === b.cid);
+                    if (!existingPost) {
                         discussion[path].bluesky.push(b);
+                    }
+                    else {
+                        const index = discussion[path].bluesky.indexOf(existingPost);
+                        discussion[path].bluesky[index] = b;
                     }
                 })
             }
