@@ -1,1 +1,1 @@
-npm run all
+npm run generate-upload
