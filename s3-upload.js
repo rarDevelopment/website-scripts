@@ -1,6 +1,6 @@
 // Import necessary modules from the AWS SDK v3
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
-import { readFile } from "fs/promises"; // Node.js built-in module for reading files
+import { readFileSync } from "fs";
 import 'dotenv/config';
 
 // Create an S3 client with your credentials
@@ -21,7 +21,7 @@ filesToUpload.forEach(async (fileName) => {
     const bucketName = "rardk-web-data-files";
     const key = fileName; // Object key in S3
     const localFilePath = filePath; // Object key in S3
-    const fileContent = await readFile(localFilePath, "utf8");
+    const fileContent = await readFileSync(localFilePath).toString();
 
     // Create a command to upload the file
     const uploadCommand = new PutObjectCommand({
