@@ -1,1 +1,1 @@
-npm run generate-upload
+/root/.nvm/versions/node/v19.9.0/bin/node /root/website-scripts/social-finder-blog-posts.js && /root/.nvm/versions/node/v19.9.0/bin/node /root/website-scripts/social-finder-links.js && /root/.nvm/versions/node/v19.9.0/bin/node /root/website-scripts/s3-upload.js
