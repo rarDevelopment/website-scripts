@@ -1,6 +1,7 @@
 import extractUrls from 'extract-urls'
 import fs from 'fs'
 import 'dotenv/config';
+import fetch from "node-fetch";
 
 //modified from: https://github.com/rknightuk/api/blob/117aade2783beeb09686e9f7e7d3775facf06722/services/discussion.js
 

@@ -15,10 +15,11 @@ const filesToUpload = [
     "discussion-links-posts.json"
 ];
 
-filesToUpload.forEach(async (filePath) => {
+filesToUpload.forEach(async (fileName) => {
+    const filePath = `${process.env.DIRECTORYPATH}${fileName}`;
     // Define the S3 bucket and file details
     const bucketName = "rardk-web-data-files";
-    const key = filePath; // Object key in S3
+    const key = fileName; // Object key in S3
     const localFilePath = filePath; // Object key in S3
     const fileContent = await readFile(localFilePath, "utf8");
 
