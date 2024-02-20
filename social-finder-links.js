@@ -1,11 +1,10 @@
 import extractUrls from 'extract-urls'
 import fs from 'fs'
 import 'dotenv/config';
-//import fetch from "node-fetch";
 
 //modified from: https://github.com/rknightuk/api/blob/117aade2783beeb09686e9f7e7d3775facf06722/services/discussion.js
 
-const urlRegexPattern = /https:\/\/(www.)?rardk\.com\/links/g;
+const urlRegexPattern = /http(s)?:\/\/(www.)?rardk\.com\/links/g;
 const mastodonUrl = `https://mastodon.social/api/v1/accounts/425168/statuses?exclude_replies=true&limit=50&exclude_reblogs=true`;
 const blueskyUrl = `https://bsky.social/xrpc/com.atproto.repo.listRecords?collection=app.bsky.feed.post&repo=rardk64.com`;
 const fileName = `${process.env.DIRECTORYPATH}discussion-links-posts.json`;
@@ -17,9 +16,12 @@ async function run() {
         const res = await fetch(mastodonUrl)
 
         const mastodonPosts = await res.json()
-
+        console.log(mastodonPosts[2])
         mastodonPosts.forEach(t => {
             const urls = (extractUrls(t.content) || []).filter(url => url.match(urlRegexPattern))
+            if (urls.length > 0) {
+                console.log("urls!", urls)
+            }
             const isSyndicate = urls.some(url => url.match(urlRegexPattern))
             if (isSyndicate) {
                 urls.forEach(url => {
