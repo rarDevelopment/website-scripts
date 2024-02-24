@@ -13,14 +13,14 @@ const s3Client = new S3Client({
 const filePathsToUpload = [
   'discussion-blog-posts.json',
   'discussion-links-posts.json',
-  'current-books.json',
-  'current-games.json',
-  'current-tv.json',
-  'recent-books.json',
-  'recent-games.json',
-  'recent-movies.json',
-  'top-albums.json',
-  'top-artists.json',
+  'now-current-books.json',
+  'now-current-games.json',
+  'now-current-tv.json',
+  'now-recent-books.json',
+  'now-recent-games.json',
+  'now-recent-movies.json',
+  'now-top-albums.json',
+  'now-top-artists.json',
 ];
 
 filePathsToUpload.forEach(async (fileName) => {
