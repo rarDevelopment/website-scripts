@@ -12,16 +12,10 @@ const fileName = `${process.env.DIRECTORYPATH}discussion-links-posts.json`;
 async function run() {
     let discussion = JSON.parse(fs.readFileSync(fileName));
     try {
-
         const res = await fetch(mastodonUrl)
-
         const mastodonPosts = await res.json()
-        console.log(mastodonPosts[2])
         mastodonPosts.forEach(t => {
             const urls = (extractUrls(t.content) || []).filter(url => url.match(urlRegexPattern))
-            if (urls.length > 0) {
-                console.log("urls!", urls)
-            }
             const isSyndicate = urls.some(url => url.match(urlRegexPattern))
             if (isSyndicate) {
                 urls.forEach(url => {
@@ -48,13 +42,9 @@ async function run() {
     }
     try {
         const res = await fetch(blueskyUrl)
-
         const blueskyResponse = await res.json()
-
         blueskyResponse.records.forEach(b => {
-
             const urls = getLinksFromBlueSkyPost(b);
-
             const isSyndicate = urls.some(url => url.match(urlRegexPattern))
             if (isSyndicate) {
                 urls.forEach(url => {
