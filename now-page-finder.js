@@ -2,6 +2,7 @@ import fs from 'fs';
 import 'dotenv/config';
 
 const apiUrl = process.env.API_URL;
+const githubUrl = `https://api.github.com/search/repositories?q=user:rarDevelopment&sort=updated&order=desc&per_page=20`;
 
 const scriptsToRun = [
   {
@@ -50,6 +51,12 @@ const scriptsToRun = [
     name: 'Update Top Artists (This Month)',
     urlToUse: `${apiUrl}lastfm/topartists?limit=5&period=1month`,
     fileName: `${process.env.DIRECTORYPATH}now-top-artists.json`,
+    allowEmpty: false,
+  },
+  {
+    name: 'Update GitHub Projects',
+    urlToUse: githubUrl,
+    fileName: `${process.env.DIRECTORYPATH}now-github-projects.json`,
     allowEmpty: false,
   },
   {

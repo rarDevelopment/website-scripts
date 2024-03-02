@@ -22,7 +22,8 @@ const filePathsToUpload = [
   'now-top-albums.json',
   'now-top-artists.json',
   'collections-board-games-wishlist.json',
-  'collections-board-games-owned.json'
+  'collections-board-games-owned.json',
+  'now-github-projects.json',
 ];
 
 filePathsToUpload.forEach(async (fileName) => {
