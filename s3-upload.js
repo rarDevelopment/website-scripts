@@ -21,6 +21,8 @@ const filePathsToUpload = [
   'now-recent-movies.json',
   'now-top-albums.json',
   'now-top-artists.json',
+  'collections-board-games-wishlist.json',
+  'collections-board-games-owned.json'
 ];
 
 filePathsToUpload.forEach(async (fileName) => {
