@@ -52,6 +52,18 @@ const scriptsToRun = [
     fileName: `${process.env.DIRECTORYPATH}now-top-artists.json`,
     allowEmpty: false,
   },
+  {
+    name: 'Update Board Games Wishlist',
+    urlToUse: `${apiUrl}boardgamegeek/wishlist`,
+    fileName: `${process.env.DIRECTORYPATH}collections-board-games-wishlist.json`,
+    allowEmpty: false,
+  },
+  {
+    name: 'Update Board Games Wishlist',
+    urlToUse: `${apiUrl}boardgamegeek/owned`,
+    fileName: `${process.env.DIRECTORYPATH}collections-board-games-owned.json`,
+    allowEmpty: false,
+  },
 ];
 
 async function updateNowJson(scriptName, url, fileName, allowEmpty) {
