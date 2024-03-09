@@ -71,6 +71,12 @@ const scriptsToRun = [
     fileName: `${process.env.DIRECTORYPATH}collections-board-games-owned.json`,
     allowEmpty: false,
   },
+  {
+    name: 'Update PixelFed Posts',
+    urlToUse: `${apiUrl}pixelfed/posts`,
+    fileName: `${process.env.DIRECTORYPATH}gallery-pixelfed-posts.json`,
+    allowEmpty: false,
+  },
 ];
 
 async function updateNowJson(scriptName, url, fileName, allowEmpty) {
