@@ -27,7 +27,7 @@ const scriptsToRun = [
     name: 'updateCurrentTv',
     urlToUse: `${apiUrl}tvshows/latestshows`,
     fileName: `${process.env.DIRECTORYPATH}now-current-tv.json`,
-    allowEmpty: true,
+    allowEmpty: false,
   },
   {
     name: 'updateCurrentBooks',
