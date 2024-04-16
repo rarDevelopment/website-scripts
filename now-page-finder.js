@@ -25,7 +25,7 @@ const scriptsToRun = [
   },
   {
     name: 'updateCurrentTv',
-    urlToUse: `${apiUrl}serializd/currentlywatching?limit=5`,
+    urlToUse: `${apiUrl}tvshows/latestepisodes`,
     fileName: `${process.env.DIRECTORYPATH}now-current-tv.json`,
     allowEmpty: true,
   },
