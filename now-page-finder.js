@@ -7,19 +7,19 @@ const githubUrl = `https://api.github.com/search/repositories?q=user:rarDevelopm
 const scriptsToRun = [
   {
     name: 'updateRecentGames',
-    urlToUse: `${apiUrl}backloggd/reviews?limit=5`,
+    urlToUse: `${apiUrl}backloggd/reviews`,
     fileName: `${process.env.DIRECTORYPATH}now-recent-games.json`,
     allowEmpty: false,
   },
   {
     name: 'updateCurrentGames',
-    urlToUse: `${apiUrl}backloggd/current?limit=5`,
+    urlToUse: `${apiUrl}backloggd/current`,
     fileName: `${process.env.DIRECTORYPATH}now-current-games.json`,
     allowEmpty: true,
   },
   {
     name: 'updateRecentMovies',
-    urlToUse: `${apiUrl}letterboxd?limit=5`,
+    urlToUse: `${apiUrl}letterboxd`,
     fileName: `${process.env.DIRECTORYPATH}now-recent-movies.json`,
     allowEmpty: false,
   },
@@ -31,25 +31,25 @@ const scriptsToRun = [
   },
   {
     name: 'updateCurrentBooks',
-    urlToUse: `${apiUrl}goodreads/currently-reading?limit=5`,
+    urlToUse: `${apiUrl}goodreads/currently-reading`,
     fileName: `${process.env.DIRECTORYPATH}now-current-books.json`,
     allowEmpty: true,
   },
   {
     name: 'updateFinishedBooks',
-    urlToUse: `${apiUrl}goodreads/finished?limit=5`,
+    urlToUse: `${apiUrl}goodreads/finished`,
     fileName: `${process.env.DIRECTORYPATH}now-recent-books.json`,
     allowEmpty: false,
   },
   {
     name: 'Update Top Albums (This Month)',
-    urlToUse: `${apiUrl}lastfm/topalbums?limit=5&period=1month`,
+    urlToUse: `${apiUrl}lastfm/topalbums?period=1month`,
     fileName: `${process.env.DIRECTORYPATH}now-top-albums.json`,
     allowEmpty: false,
   },
   {
     name: 'Update Top Artists (This Month)',
-    urlToUse: `${apiUrl}lastfm/topartists?limit=5&period=1month`,
+    urlToUse: `${apiUrl}lastfm/topartists?period=1month`,
     fileName: `${process.env.DIRECTORYPATH}now-top-artists.json`,
     allowEmpty: false,
   },
