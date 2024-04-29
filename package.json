@@ -2,9 +2,7 @@
   "name": "website-scripts",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "generate-upload": "node ./social-finder-blog-posts.js && node ./social-finder-links.js && node ./s3-upload.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rarDevelopment/website-scripts.git"

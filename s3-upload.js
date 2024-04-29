@@ -25,6 +25,7 @@ const filePathsToUpload = [
   'collections-board-games-owned.json',
   'now-github-projects.json',
   'gallery-pixelfed-posts.json',
+  'lego-sets-images.json',
 ];
 
 filePathsToUpload.forEach(async (fileName) => {
