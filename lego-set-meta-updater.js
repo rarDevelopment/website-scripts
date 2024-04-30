@@ -15,8 +15,9 @@ try {
     await Promise.all(
       legoSets.map(async (set) => {
         const response = await fetch(legoImageUrl.replace('{{SET_URL}}', set.url));
-        const imageUrl = await response.text();
-        set.imageUrl = imageUrl;
+        const imageUrlData = await response.json();
+        set.imageUrl = imageUrlData.imageUrl;
+        set.previewUrl = imageUrlData.previewUrl;
         legoSetsWithImages.push(set);
       })
     );
