@@ -23,7 +23,9 @@ try {
           (existingSet) => existingSet.url === set.url
         );
         if (existingSet && existingSet.imageUrl && existingSet.previewUrl) {
-          legoSetsWithImages.push(existingSet);
+          set.imageUrl = existingSet.imageUrl;
+          set.previewUrl = existingSet.previewUrl;
+          legoSetsWithImages.push(set);
           return;
         }
         const response = await fetch(legoImageUrl.replace('{{SET_URL}}', set.url));
