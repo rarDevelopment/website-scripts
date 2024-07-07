@@ -13,6 +13,7 @@ const s3Client = new S3Client({
 const filePathsToUpload = [
   'discussion-blog-posts.json',
   'discussion-links-posts.json',
+  'discussion-posts.json',
   'now-current-books.json',
   'now-current-games.json',
   'now-current-tv.json',
