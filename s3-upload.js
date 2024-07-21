@@ -17,6 +17,7 @@ const filePathsToUpload = [
   'now-current-books.json',
   'now-current-games.json',
   'now-current-tv.json',
+  'now-tv-reviews.json',
   'now-recent-books.json',
   'now-recent-games.json',
   'now-recent-movies.json',

@@ -30,6 +30,12 @@ const scriptsToRun = [
     allowEmpty: false,
   },
   {
+    name: 'updateTvReviews',
+    urlToUse: `${apiUrl}tvshows/latestreviews`,
+    fileName: `${process.env.DIRECTORYPATH}now-tv-reviews.json`,
+    allowEmpty: false,
+  },
+  {
     name: 'updateCurrentBooks',
     urlToUse: `${apiUrl}goodreads/currently-reading`,
     fileName: `${process.env.DIRECTORYPATH}now-current-books.json`,
