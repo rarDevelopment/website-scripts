@@ -48,7 +48,15 @@ async function run() {
       const isSyndicate = b.value.text.match(hashtagRegexPattern);
       if (isSyndicate) {
         const indexOfHashtag = b.value.text.indexOf(hashtag);
-        let path = b.value.text.slice(indexOfHashtag).replace(hashtag, '');
+        const hashtagAndAfter = b.value.text
+          .slice(indexOfHashtag + 1)
+          .replace(hashtag.replace('#', ''), '');
+        const indexOfNextNonDigit = hashtagAndAfter.search(/\D/);
+        const endIndex =
+          indexOfNextNonDigit !== -1
+            ? indexOfHashtag + hashtag.length + indexOfNextNonDigit
+            : undefined;
+        const path = b.value.text.slice(indexOfHashtag + hashtag.length, endIndex);
         if (!discussion[path])
           discussion[path] = {
             mastodon: [],
